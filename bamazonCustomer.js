@@ -15,7 +15,7 @@ connection.connect();
 connection.query('SELECT * FROM products', function (err, res) {
     if (err) throw err;
     for(var i = 0; i < res.length; i++){
-        console.log(`Product ID: ${res[i].ID}  ||  Product Name: ${res[i].product_name}  ||  Product Price: ${res[i].price}  ||  Product Quantity: ${res[i].stock_quantity}
+        console.log(`Product ID: ${res[i].ID}  ||  Product Name: ${res[i].product_name}  ||  Product Price: $${res[i].price}  ||  Product Quantity: ${res[i].stock_quantity}
             `);
     };
     wishTobuy();
@@ -28,12 +28,12 @@ function wishTobuy() {
             {
                 name: "productID",
                 type: "input",
-                message: "What product would you like to purchase?"
+                message: "What [PRODUCT ID] would you like to purchase?"
             },
             {
                 name: "productQty",
                 type: "input",
-                message: "How many would you like to purchase?"
+                message: "What [QUANTITY] would you like to purchase?"
             }
         ])
         .then(function (answers) {

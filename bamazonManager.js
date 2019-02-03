@@ -51,25 +51,24 @@ function manager() {
 function productsSale() {
     connection.query('SELECT products.ID, products.product_name, products.price, products.stock_quantity FROM products', function (err, res) {
         if (err) throw err;
+        console.log("Products for sale:");
         for (var i = 0; i < res.length; i++) {
-            console.log(
-                `
+            console.log(`
 Product ID: ${res[i].ID}
 Product Name: ${res[i].product_name}
 Product Price: ${res[i].price}
 Product Quantity: ${res[i].stock_quantity}
-------------------------------------------
-            `
+-----------------`
             );
         }
     });
     connection.end();
+
 }
 
 function viewLowInventory() {
     connection.query('SELECT products.ID, products.product_name, products.stock_quantity FROM products WHERE products.stock_quantity < 5', function (err, res) {
         if (err) throw err;
-        console.log(res);
         console.log(`
 Low Quantity items:    
 -----------------------------------------
@@ -101,7 +100,7 @@ function addToInventory() {
         connection.query('SELECT * FROM products WHERE ID = ?', [answers.productChoice], function (err, res) {
             if (err) throw err;
             console.log("New Product Quantity = " + res[0].stock_quantity);
-        })
+        });
         connection.end();
     });
 }
@@ -117,17 +116,17 @@ function addNewProduct() {
         {
             name: "departmentName",
             type: "input",
-            message: "What department does that belong in?",
+            message: "What [DEPARTMENT] does that belong in?",
         },
         {
             name: "productPrice",
             type: "input",
-            message: "How much does it cost?",
+            message: "What is the [PRICE] of the product?",
         },
         {
             name: "productQty",
             type: "input",
-            message: "How many to add?",
+            message: "What [QUANTITY]?",
         }
 
     ]).then(function (answers) {
