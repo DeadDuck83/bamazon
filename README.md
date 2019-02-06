@@ -13,15 +13,19 @@ Here we are using the Bamazon Manager to review the options to manager the produ
 The options available are:
 
 View Products for Sale
+
 ![Bamazon Manager](https://deadduck83.github.io/bamazon/videoGifs/bamazonManager_products_for_sale.gif)
 
 View Low Inventory
+
 ![Bamazon Manager](https://deadduck83.github.io/bamazon/videoGifs/bamazonManager_low_inventory.gif)
 
 Add to Inventory
+
 ![Bamazon Manager](https://deadduck83.github.io/bamazon/videoGifs/bamazonManager_add_qty.gif)
 
 Add New Product
+
 ![Bamazon Manager](https://deadduck83.github.io/bamazon/videoGifs/bamazonManager_add_product.gif)
 
 and that's it.
